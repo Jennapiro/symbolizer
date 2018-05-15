@@ -1,24 +1,50 @@
-var1=10
-var2=20
-var3=var1+var2
-print (var3)
-stir="hi"
-print (stir)
-x=True
+import statistics
+temp_list = [60,90,80,78,60,79,80];
+x= statistics.mean(temp_list)
 print(x)
-a=3.0
-print(a)
-b=3j
-print(b)
-c=[1,2,3]
-print(c)
-d=(1,2,3)
-print(d)
-e={1,2,3}
-print(e)
-f={"one" : 1}
-print(f)
-g= lambda x: x
-print(g)
-h= b"hello"
-print(h)
+temp_list.append(2)
+print (temp_list)
+temp_list.insert(30,99)
+print(temp_list)
+
+print("Welcome to the get to know your program")
+name = input("What is your name? ")
+print ("Hello " + name +"!")
+age= int(input("What is your age? "))
+if age>=16:
+	print("You can drive a car!")
+print ("Nice to meet you")
+def menu():
+	print("\nl. Celsius to Fahrenheit")
+	print("2. Fahrenheit to Celsius")
+	print("3. Exit")
+	pick = int(input("Enter a choice: "))
+	return pick
+
+def toCelsius(f) :
+	return int((f - 32 / 1.8))
+
+def toFahrenheit(c) :
+	return int(c * 1.8 + 32)
+
+def main():
+	choice = menu ()
+	while choice != 3:
+		if choice == 1:
+			# convert C to F
+			c = eval(input("Enter degrees Celsius: "))
+			print(str(toFahrenheit(c)))
+		elif choice == 2:
+			#convert F to C
+			f = eval (input("Enter degrees Fahrenheit: "))
+			print(str(toCelsius(f)))
+		else:
+			print("Invalid entry")
+		choice = menu()
+
+main()
+
+
+
+
+
